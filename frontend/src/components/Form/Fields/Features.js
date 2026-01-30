@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Checkbox from '../../shared/Checkbox';
 
 function Features({ features, selectedFeatures = [], onFeatureChange }) {
-  const [currentFeatures, setCurrentFeatures] = useState(selectedFeatures)
+  const [currentFeatures, setCurrentFeatures] = useState(selectedFeatures);
 
   const handleFeatureChange = (feature) => {
     const updatedFeatures = currentFeatures.includes(feature)
@@ -19,14 +19,19 @@ function Features({ features, selectedFeatures = [], onFeatureChange }) {
       <ul>
         {features.map((feature, index) => (
           <li key={index} className="mb-2">
-            <Checkbox
-              value={feature}
-              checked={currentFeatures.includes(feature)}
-              onChange={() => handleFeatureChange(feature)}
-              className="text-green-500"
+            <div
+              className="flex items-center px-2 py-1 rounded hover:bg-gray-100
+  has-[:checked]:bg-blue-50"
             >
-              {feature}
-            </Checkbox>
+              <Checkbox
+                value={feature}
+                checked={currentFeatures.includes(feature)}
+                onChange={() => handleFeatureChange(feature)}
+                className="text-green-500"
+              >
+                {feature}
+              </Checkbox>
+            </div>
           </li>
         ))}
       </ul>
