@@ -4,7 +4,6 @@ import { multipleProductRecommentaion } from '../utils/multipleProductsRecommend
 import { singleProductRecommendation } from '../utils/singleProductRecommendation';
 
 const getRecommendations = (formData = {}, products) => {
-  // entradas
   const {
     selectedFeatures = [''],
     selectedPreferences = [''],
@@ -12,13 +11,11 @@ const getRecommendations = (formData = {}, products) => {
   } = formData;
 
   const scoreProducts = products.map((product) => {
-    //unifica prefs
     const unifiedUserPreferences = [
       ...selectedPreferences,
       ...selectedFeatures,
     ];
 
-    //calcula score por produto
     const score = unifiedUserPreferences.filter(
       (escolha) =>
         product.preferences.includes(escolha) ||

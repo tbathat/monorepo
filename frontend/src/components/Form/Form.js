@@ -1,29 +1,20 @@
 // Form.js
 
-import React, { useEffect } from 'react';
 import { Preferences, Features, RecommendationType } from './Fields';
 import { SubmitButton } from './SubmitButton';
-import useProducts from '../../hooks/useProducts';
-import useForm from '../../hooks/useForm';
-import useRecommendations from '../../hooks/useRecommendations';
 
-function Form() {
-  const { preferences, features, products } = useProducts();
+import useForm from '../../hooks/useForm';
+
+function Form({ onSubmit = () => {}, preferences = [], features = [] }) {
   const { formData, handleChange } = useForm({
     selectedPreferences: [],
     selectedFeatures: [],
     selectedRecommendationType: '',
   });
 
-  const { getRecommendations, recommendations, setRecommendations } =
-    useRecommendations(products);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    debugger;
-    const dataRecommendations = getRecommendations(formData);
-    setRecommendations(dataRecommendations);
-    return recommendations;
+    onSubmit(formData);
   };
 
   return (
