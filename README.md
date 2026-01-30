@@ -1,3 +1,7 @@
+<p align="center">
+    <img width="200"  src="https://www.rdstation.com/wp-content/themes/rdstation/assets/img//logos/rebrand/rd-station-cor-md.svg" alt="rd-station-logo"/>
+</p>
+
 # Teste Técnico - Recomendador de Produtos RD Station
 
 Este projeto é parte do teste técnico para a vaga de desenvolvedor front-end na RD Station. O objetivo principal é implementar a lógica de recomendação de produtos RD Station em uma aplicação web existente.
