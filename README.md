@@ -95,7 +95,9 @@ Certifique-se de que todos os critérios de aceite são atendidos durante o dese
 
 ## Autor
 
-Desenvolvido por [Seu Nome]
+Desenvolvido por Tabatha Pradier [tabathapradier@gmail.com]
+
+ 🧙‍♀️ MAY THE FORCE BE WITH YOU 🔮
 
 ## Licença
 
