@@ -15,15 +15,15 @@ function Form() {
     selectedRecommendationType: '',
   });
 
-  const { getRecommendations, recommendations } = useRecommendations(products);
+  const { getRecommendations, recommendations, setRecommendations } =
+    useRecommendations(products);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    debugger;
     const dataRecommendations = getRecommendations(formData);
-
-    /**
-     * Defina aqui a lógica para atualizar as recomendações e passar para a lista de recomendações
-     */
+    setRecommendations(dataRecommendations);
+    return recommendations;
   };
 
   return (
