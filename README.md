@@ -103,6 +103,31 @@ Desenvolvido por Tabatha Pradier [tabathapradier@gmail.com]
 
  🧙‍♀️ MAY THE FORCE BE WITH YOU 🔮
 
+## Considerações técnicas de desenvolvimento
+
+### Observações e recomendações gerais
+
+- A lógica de recomendação ficou isolada em uma service (`recommendation.service.js`).
+- Os componentes React focam exclusivamente em orquestração e UI.
+- O algoritmo de recomendação utiliza uma única iteração sobre a lista de produtos (`O(n)`), onde o cálculo da pontuação de produto é baseado entre preferências/funcionalidades selecionads pelo usuário e os dados do produto. O enfoque foi a garantia da performance com crescimento da listaa de produtos.
+- Em casos de empate de score para recomeção do tipo  `SingleProduct` o desempate é definido pelo último item da lista com maior pontuação, conforme regra de negócio.
+- Não foi possível a implementação de novos casos de testes devido à alta demanda de desenvolvimento e o date line. Porém os casos extremos (como ausência de preferência ou funcionalidade) são tratados pela lógica para evitar mal funcionamento ou desinformação visual para o usuário.
+- O projeto utiliza JavaScript Vanila (ES6+), foi desenvolvido e testado com Node.js versão 18.3, conforme especificado nos requisitos. Sugerimos manter a versão indicada para consistência do sistema.
+
+### Estrutura de pastas 
+
+A estrutura de pastas permanece a mesma com divisão das responsabilidades, mantendo-se escalável para futuras adições de funcionalidades.
+```
+frontend/
+├──src/
+├── components/
+├── hooks/
+├── services/
+├── utils/
+├── mocks/
+```
+
+
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
